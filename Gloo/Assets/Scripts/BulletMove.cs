@@ -5,6 +5,9 @@ using UnityEngine;
 public class BulletMove : MonoBehaviour {
     public float speed = 10.0f;
     Rigidbody2D rb;
+    public int damage = 25;
+    public float lifeSpan = 5.0f;
+
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
@@ -13,5 +16,20 @@ public class BulletMove : MonoBehaviour {
     private void FixedUpdate()
     {
         rb.velocity = transform.up * speed;
+        lifeSpan -= Time.deltaTime;
+        if (lifeSpan <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+        if (hitInfo.tag == "Enemy")
+        {
+            hitInfo.GetComponent<HealthSytem>().TakeDamage(damage);
+        }
+
+        Destroy(gameObject);
     }
 }
