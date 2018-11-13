@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HealthSytem : MonoBehaviour {
     public int health = 100;
+    public GameObject deathEffect;
 
 public void TakeDamage(int damage)
     {
@@ -16,6 +17,7 @@ public void TakeDamage(int damage)
 
     void Die()
     {
+        Instantiate(deathEffect, gameObject.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

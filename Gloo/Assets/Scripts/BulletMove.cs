@@ -7,6 +7,7 @@ public class BulletMove : MonoBehaviour {
     Rigidbody2D rb;
     public int damage = 25;
     public float lifeSpan = 5.0f;
+    public GameObject collisionEffect;
 
 	// Use this for initialization
 	void Start () {
@@ -29,7 +30,7 @@ public class BulletMove : MonoBehaviour {
         {
             hitInfo.GetComponent<HealthSytem>().TakeDamage(damage);
         }
-
+        Instantiate(collisionEffect, gameObject.transform.position, gameObject.transform.rotation);
         Destroy(gameObject);
     }
 }
