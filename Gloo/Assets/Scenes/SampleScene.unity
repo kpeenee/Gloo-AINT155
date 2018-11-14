@@ -3507,7 +3507,7 @@ GameObject:
   - component: {fileID: 1274171111}
   - component: {fileID: 1274171112}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3793,7 +3793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 1625688300405228, guid: 971c95d15c50b0f489c89cde1b0fd4c2, type: 2}
   timeBtwShots: 0
-  startTimeBtwShots: 0.8
+  startTimeBtwShots: 0.5
   shootPoint: {fileID: 1057982281}
 --- !u!1 &1883432762
 GameObject:
@@ -3977,3 +3977,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1883432764}
+  healthBar: {fileID: 1274171112}
