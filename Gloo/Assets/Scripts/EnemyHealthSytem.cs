@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthSytem : MonoBehaviour {
+public class EnemyHealthSytem : MonoBehaviour {
     public int health = 100;
     public GameObject deathEffect;
+    public int scoreGain;
+    
+    
 
 public void TakeDamage(int damage)
     {
@@ -17,7 +20,9 @@ public void TakeDamage(int damage)
 
     void Die()
     {
+        GameUI.playerScore += scoreGain;
         Instantiate(deathEffect, gameObject.transform.position, Quaternion.identity);
         Destroy(gameObject);
+
     }
 }

@@ -28,7 +28,7 @@ public class BulletMove : MonoBehaviour {
     {
         if (hitInfo.tag == "Enemy")
         {
-            hitInfo.GetComponent<HealthSytem>().TakeDamage(damage);
+            hitInfo.GetComponent<EnemyHealthSytem>().TakeDamage(damage);
         }
         Instantiate(collisionEffect, gameObject.transform.position, gameObject.transform.rotation);
         Destroy(gameObject);
