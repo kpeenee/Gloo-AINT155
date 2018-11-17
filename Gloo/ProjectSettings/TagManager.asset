@@ -15,7 +15,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Crosshair
   - 
   - 
   - 
@@ -51,4 +51,7 @@ TagManager:
     locked: 0
   - name: enemy
     uniqueID: 1517312003
+    locked: 0
+  - name: Crosshair
+    uniqueID: 879701011
     locked: 0
