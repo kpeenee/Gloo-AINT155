@@ -30,7 +30,11 @@ public class BulletMove : MonoBehaviour {
         {
             hitInfo.GetComponent<EnemyHealthSytem>().TakeDamage(damage);
         }
-        Instantiate(collisionEffect, gameObject.transform.position, gameObject.transform.rotation);
-        Destroy(gameObject);
+        if (hitInfo.tag != "Player")
+        {
+            Instantiate(collisionEffect, gameObject.transform.position, gameObject.transform.rotation);
+            Destroy(gameObject);
+        }
+        
     }
 }

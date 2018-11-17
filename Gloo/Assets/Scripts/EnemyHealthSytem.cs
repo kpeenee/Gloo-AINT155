@@ -20,7 +20,7 @@ public void TakeDamage(int damage)
 
     void Die()
     {
-        GameUI.playerScore += scoreGain;
+        GameManager.playerScore += scoreGain;
         Instantiate(deathEffect, gameObject.transform.position, Quaternion.identity);
         Destroy(gameObject);
 
