@@ -3,20 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerTakeDamage : MonoBehaviour {
-    public float hurtTime = 1.0f;
+    public float startTimeBtwDamage = 1.0f;
+    public float timeBtwDamage = 1.0f;
+
+
+    private void Update()
+    {
+        timeBtwDamage -= Time.deltaTime;
+    }
+
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        
         if (collision.gameObject.tag == "Enemy")
         {
-            GameManager.playerHealth -= 10;
-            GetComponent<Collider2D>().enabled = false;
-            Invoke("ResetCollider", hurtTime);
+            if (timeBtwDamage <= 0)
+            {
+                GameManager.playerHealth -= 10;
+                timeBtwDamage = startTimeBtwDamage;
+            }
+            
+  
         }
 
         
     }
-    private void ResetCollider()
-    {
-        GetComponent<Collider2D>().enabled = true;
-    }
+    
 }
