@@ -31,7 +31,8 @@ public class PlayerTakeDamage : MonoBehaviour {
 
         if(GameManager.playerHealth <= 0)
         {
-            SceneManager.LoadScene("GlooGame");
+            Cursor.visible = true;
+            SceneManager.LoadScene("GameOver");
             GameManager.playerHealth = 100;
             GameManager.playerScore = 0;
         }
