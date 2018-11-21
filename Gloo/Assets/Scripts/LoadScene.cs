@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class LoadGame : MonoBehaviour
+public class LoadScene : MonoBehaviour
 {
-
+    public string scene;
     public void Load()
     {
-        SceneManager.LoadScene("GlooGame");
+        SceneManager.LoadScene(scene);
     }
 }
