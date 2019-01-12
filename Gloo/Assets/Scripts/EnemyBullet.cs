@@ -6,30 +6,34 @@ public class EnemyBullet : MonoBehaviour {
     public int speed;
     public float lifeSpan;
 
-    private Rigidbody2D rb;
+    private Transform target;
 
 
 
 
 	// Use this for initialization
 	void Start () {
-        rb = GetComponent<Rigidbody2D>();
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        rb.velocity = transform.up * speed;
-        lifeSpan -= Time.deltaTime;
+        transform.position = Vector2.MoveTowards(transform.position, target.position,speed * Time.deltaTime);
         if (lifeSpan <= 0)
         {
             Destroy(gameObject);
         }
+        lifeSpan -= Time.deltaTime;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        GameManager.playerHealth -= 20;
+        if(collision.gameObject.tag == "Player")
+        {
+            GameManager.playerHealth -= 20;
+        }
+        
         Destroy(gameObject);
     }
 }

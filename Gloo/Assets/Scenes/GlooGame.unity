@@ -19963,7 +19963,6 @@ GameObject:
   - component: {fileID: 1834745545}
   - component: {fileID: 1834745549}
   - component: {fileID: 1834745550}
-  - component: {fileID: 1834745551}
   m_Layer: 0
   m_Name: Demon
   m_TagString: Enemy
@@ -20085,6 +20084,7 @@ MonoBehaviour:
   retreatDistance: 2
   timeBtwShot: 2.5
   shotTime: 0
+  bullet: {fileID: 1046357915577666, guid: a9925df45f9358649bf86d1da723c66c, type: 2}
   player: {fileID: 0}
 --- !u!95 &1834745550
 Animator:
@@ -20104,17 +20104,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1834745551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1834745544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e69ab95699d924043beed5f5f7a20b3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1838976738
 GameObject:
   m_ObjectHideFlags: 0

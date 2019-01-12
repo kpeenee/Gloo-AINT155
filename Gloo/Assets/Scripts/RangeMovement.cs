@@ -10,6 +10,7 @@ public class RangeMovement : MonoBehaviour {
     public float retreatDistance;
     public float timeBtwShot = 2.5f;
     public float shotTime;
+    public GameObject bullet;
 
     public Transform player;
 
@@ -45,8 +46,14 @@ public class RangeMovement : MonoBehaviour {
         {
             anim.SetBool("isShooting", true);
             shotTime = timeBtwShot;
+            Instantiate(bullet, transform.position, Quaternion.identity);
         }
         shotTime -= Time.deltaTime;
 
+    }
+
+    void StopShooting()
+    {
+        anim.SetBool("isShooting", false);
     }
 }
