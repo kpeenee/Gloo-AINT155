@@ -8,6 +8,8 @@ public class RangeMovement : MonoBehaviour {
     public float speed;
     public float stoppingDistance;
     public float retreatDistance;
+    public float timeBtwShot = 2.5f;
+    public float shotTime;
 
     public Transform player;
 
@@ -17,6 +19,7 @@ public class RangeMovement : MonoBehaviour {
 	void Start () {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         anim = GetComponent<Animator>();
+        shotTime = timeBtwShot;
 	}
 	
 	// Update is called once per frame
@@ -36,6 +39,14 @@ public class RangeMovement : MonoBehaviour {
             transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
             anim.SetBool("isMoving", true);
         }
+
+
+        if(shotTime <= 0)
+        {
+            anim.SetBool("isShooting", true);
+            shotTime = timeBtwShot;
+        }
+        shotTime -= Time.deltaTime;
 
     }
 }
