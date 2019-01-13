@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61988563480148476}
   - component: {fileID: 50197477215602284}
   - component: {fileID: 114045996319067610}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Gloo bullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
