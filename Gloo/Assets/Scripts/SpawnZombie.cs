@@ -5,6 +5,8 @@ using UnityEngine;
 public class SpawnZombie : MonoBehaviour {
     public float timeBtwSpawn = 0;
     public float startTimeBtwSpawn = 5;
+    private float startTimeBtwIncrease = 10f;
+    private float timeBtwIncrease = 10f;
     public GameObject zombie;
 
 
@@ -24,5 +26,21 @@ public class SpawnZombie : MonoBehaviour {
         {
             timeBtwSpawn -= Time.deltaTime;
         }
+
+        if (timeBtwIncrease <= 0)
+        {
+            IncreaseFrequency();
+            timeBtwIncrease = startTimeBtwIncrease;
+        }
+
+        timeBtwIncrease -= Time.deltaTime;
 	}
+
+    void IncreaseFrequency()
+    {
+        if(startTimeBtwSpawn > 1)
+        {
+            startTimeBtwSpawn -= 0.5f;
+        }
+    }
 }

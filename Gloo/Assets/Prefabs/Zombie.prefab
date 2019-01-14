@@ -104,6 +104,7 @@ MonoBehaviour:
   deathEffect: {fileID: 1209963716347968, guid: 8b973145575a1a847982c85937e17d8e,
     type: 2}
   scoreGain: 10
+  powerUp: {fileID: 1394699469091440, guid: e4264a470665c204289da215db760ed8, type: 2}
 --- !u!114 &114487608237910874
 MonoBehaviour:
   m_ObjectHideFlags: 1
