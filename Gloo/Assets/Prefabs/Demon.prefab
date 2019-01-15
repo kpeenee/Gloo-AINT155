@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61612952608993088}
   - component: {fileID: 114011406996501192}
   - component: {fileID: 95721151376890942}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Demon
   m_TagString: Enemy
   m_Icon: {fileID: 0}
