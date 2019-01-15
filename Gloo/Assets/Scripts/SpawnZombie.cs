@@ -17,9 +17,14 @@ public class SpawnZombie : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        float ranX = Random.Range(-25f, 25);
+        float ranY = Random.Range(-20f, 20f);
+        Vector3 spawnPoint = new Vector3(ranX, ranY, 0);
+
 		if (timeBtwSpawn <= 0)
         {
-            Instantiate(zombie, gameObject.transform.position, Quaternion.identity);
+            Instantiate(zombie, spawnPoint, Quaternion.identity);
             timeBtwSpawn = startTimeBtwSpawn;
         }
         else
